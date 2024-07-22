@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - ATS Score Website</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo-link">
+            <img src="assets/logo.png" alt="Logo" class="logo">
+        </a>
+        <h1>Login</h1>
+        <nav class="auth-nav">
+            <a href="index.html">Home</a>
+            <a href="signup.html">Sign Up</a>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="form-section">
+            <form id="loginForm">
+                <label for="email">Email:</label>
+                <input type="email" id="email" required>
+                <label for="password">Password:</label>
+                <input type="password" id="password" required>
+                <button type="submit">Login</button>
+            </form>
+
+            <div class="social-login-buttons">
+                <button id="google-login">
+                    <img src="assets/google-logo.png" alt="Login with Google">
+                </button>
+                <button id="github-login">
+                    <img src="assets/github-logo.png" alt="Login with GitHub">
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/api.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const googleLoginButton = document.getElementById('google-login');
+            const githubLoginButton = document.getElementById('github-login');
+
+            if (googleLoginButton) {
+                googleLoginButton.addEventListener('click', () => {
+                    window.location.href = '/auth/google'; // Adjust URL as needed
+                });
+            }
+
+            if (githubLoginButton) {
+                githubLoginButton.addEventListener('click', () => {
+                    window.location.href = '/auth/github'; // Adjust URL as needed
+                });
+            }
+        });
+    </script>
+</body>
+</html>
