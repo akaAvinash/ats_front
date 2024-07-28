@@ -2,66 +2,37 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(135deg, #DA31ED, #BB254B);
-    background-size: 400% 400%;
-    animation: gradientBackground 15s ease infinite;
-    color: #f4f4f4;
-}
-
-@keyframes gradientBackground {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+    background: #f3f4f6; /* Light background for a clean look */
+    color: #333;
 }
 
 header {
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: #232f3e; /* Amazon-like dark header */
     color: #fff;
     padding: 0.5rem;
     text-align: center;
     position: relative;
-    overflow: hidden; /* Ensures logo stays within the header */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .logo {
     max-width: 100px;
     height: auto; /* Maintain aspect ratio */
     display: block;
-    margin: 0 auto; /* Center align the logo */
-    background: none; /* Ensure there's no background */
-    margin-bottom: 0.5rem; /* Adjust this to reduce space below the logo */
-}
-
-.logo-link {
-    display: inline-block;
-}
-
-.logo {
-    cursor: pointer; /* Indicates that the logo is clickable */
-    transition: opacity 0.3s; /* Smooth hover effect */
-}
-
-.logo:hover {
-    opacity: 0.8; /* Slightly fade the logo on hover */
-}
-
-
-h1 {
-    margin: 0; /* Remove default margin */
-    font-size: 2rem; /* Adjust font size as needed */
-    font-weight: bold;
-    color: #fff; /* Ensure the header text is visible */
+    margin: 0.5rem auto; /* Center align the logo */
 }
 
 .auth-nav {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .auth-nav a {
     color: #fff;
-    margin-left: 1rem;
+    margin: 0.5rem;
     text-decoration: none;
     font-size: 1.2rem; /* Increase font size */
     padding: 0.5rem 1rem; /* Increase padding for larger button effect */
@@ -72,7 +43,7 @@ h1 {
 
 .auth-nav a:hover {
     background-color: #fff;
-    color: #333;
+    color: #232f3e;
 }
 
 main {
@@ -86,7 +57,7 @@ main {
 
 .form-section,
 .result-section {
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     padding: 2rem;
@@ -125,7 +96,7 @@ textarea {
 }
 
 button {
-    background-color: #007bff;
+    background-color: #ff9900;
     border: none;
     color: #fff;
     padding: 1rem 2rem; /* Increase padding for larger button effect */
@@ -139,8 +110,8 @@ button {
 }
 
 button:hover {
-    background-color: #0056b3;
-    box-shadow: 0 0 15px rgba(0, 123, 255, 0.6);
+    background-color: #e68a00;
+    box-shadow: 0 0 15px rgba(255, 153, 0, 0.6);
 }
 
 .social-login-buttons {
@@ -176,4 +147,54 @@ button:hover {
 
 .social-login-buttons button:hover {
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Responsive styling */
+@media (max-width: 600px) {
+    .auth-nav {
+        flex-direction: column;
+    }
+
+    .auth-nav a {
+        margin: 0.5rem 0;
+    }
+
+    header {
+        padding: 1rem;
+    }
 }
