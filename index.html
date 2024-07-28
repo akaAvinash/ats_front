@@ -13,8 +13,8 @@
         </a>
         <h1>ResumeX</h1>
         <nav class="auth-nav">
-            <a href="login.html">Login</a>
-            <a href="signup.html">Sign Up</a>
+            <a href="login.html" class="tooltip" data-tooltip="Login to your account">Login</a>
+            <a href="signup.html" class="tooltip" data-tooltip="Create a new account">Sign Up</a>
         </nav>
     </header>
     
@@ -40,9 +40,42 @@
             <p id="atsScore">Your ATS score will appear here.</p>
         </section>
         
+        <section class="form-section">
+            <h2>Social Login</h2>
+            <div class="social-login-buttons">
+                <button class="google">
+                    <img src="assets/google-logo.png" alt="Google">
+                </button>
+                <button class="github">
+                    <img src="assets/github-logo.png" alt="GitHub">
+                </button>
+            </div>
+        </section>
     </main>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <p>This is a modal pop-up!</p>
+        </div>
+    </div>
 
     <script src="js/api.js"></script>
     <script src="js/main.js"></script>
+    <script>
+        // Modal functionality
+        const modal = document.getElementById('modal');
+        const closeButton = document.querySelector('.close-button');
+
+        closeButton.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+
+        window.addEventListener('click', (event) => {
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        });
+    </script>
 </body>
 </html>
